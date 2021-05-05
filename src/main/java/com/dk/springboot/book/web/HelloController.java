@@ -1,6 +1,8 @@
 package com.dk.springboot.book.web;
 
+import com.dk.springboot.book.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,4 +23,17 @@ public class HelloController {
     public String hello() {
         return "hello";
     }
+
+
+    /**
+     * 1: RequestParam
+     * - 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션
+     * - 외부 name이란 이름으로 넘긴 파라미터를 메소드에 저장.
+     */
+    @GetMapping("/hello/dto")
+    public HelloResponseDto helloDto(@RequestParam("name") String name, // 1
+                                     @RequestParam("amount") int amount) {
+        return new HelloResponseDto(name, amount);
+    }
+
 }
