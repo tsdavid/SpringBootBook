@@ -1,5 +1,6 @@
 package com.dk.springboot.book.domain.posts;
 
+import com.dk.springboot.book.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter // 6
 @NoArgsConstructor  // 5
 @Entity // 1
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     /**
      * JPA Annotation
