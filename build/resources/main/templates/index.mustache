@@ -1,0 +1,39 @@
+{{>layout/header}}
+<!-- 위 라인은 현재 머스테치 파일(index.mustache 을 기준으로 다른 파일을 로딩 -->
+
+<h1>WebService with Spring-Boot</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button" class="btn btn-primary">
+                Register
+            </a>
+        </div>
+    </div>
+    <br>
+    <!-- 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>Post-Number</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>last-modified</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}}  <!-- 1  posts라는 List를 순회, Java의 for 문과 동일-->
+            <tr>
+                <td id="id">{{id}}</td>    <!-- 2 List에서 뽑아낸 객체의 필드를 사용-->
+                <td><a href="posts/update/{{id}}"> {{title}} </a></td>
+                <td>{{author}}</td>
+                <td>{{modifiedDate}}</td>
+                <td><a href="posts/update/{{id}}"> edit </a></td>
+                <td> delete </td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}
