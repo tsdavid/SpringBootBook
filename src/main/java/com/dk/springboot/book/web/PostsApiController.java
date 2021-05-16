@@ -1,10 +1,12 @@
 package com.dk.springboot.book.web;
 
+import com.dk.springboot.book.domain.items.ItemsRepository;
 import com.dk.springboot.book.service.posts.PostsService;
-import com.dk.springboot.book.web.dto.PostsResponseDto;
-import com.dk.springboot.book.web.dto.PostsSaveRequestDto;
-import com.dk.springboot.book.web.dto.PostsUpdateRequestDto;
+import com.dk.springboot.book.web.dto.posts.PostsResponseDto;
+import com.dk.springboot.book.web.dto.posts.PostsSaveRequestDto;
+import com.dk.springboot.book.web.dto.posts.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class PostsApiController {
 
     private final PostsService postsService;
+
 
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
@@ -37,5 +40,9 @@ public class PostsApiController {
         postsService.delete(id);
         return id;
     }
+
+
+
+
 
 }

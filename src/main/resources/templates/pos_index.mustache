@@ -1,0 +1,66 @@
+{{>layout/items/header}}
+<!-- 위 라인은 현재 머스테치 파일(index.mustache 을 기준으로 다른 파일을 로딩 -->
+
+<!--<h1>PSC-POS</h1>-->
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    div {
+        text-align: center;
+    }
+    .left-pannel {
+        height: 100vw;
+        width: 50%;
+        float: left;
+        background-color: darkorange;
+    }
+
+    .right-pannel {
+        height: 100vw;
+        width: 50%;
+        float: right;
+        background-color: sienna;
+    }
+
+    .b-text {
+        font-size: 14.5rem;
+        font-weight: 800;
+    }
+
+    .text-area {
+        margin-top: 15vw;
+    }
+
+</style>
+
+<div class="pannel-container">
+
+    <div class="left-pannel">
+        <div class="text-area">
+            <a href="/pos/register">
+                <p class="left-text b-text">
+                    REGISTER
+                </p>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="right-pannel">
+        <div class="text-area">
+            <a href="/pos/sales">
+                <p class="right-text b-text">
+                    SALES
+                </p>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+{{>layout/items/footer}}

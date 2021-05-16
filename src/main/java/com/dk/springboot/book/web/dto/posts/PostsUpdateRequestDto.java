@@ -1,4 +1,4 @@
-package com.dk.springboot.book.web.dto;
+package com.dk.springboot.book.web.dto.posts;
 
 
 import lombok.Builder;

@@ -24,7 +24,8 @@ public class PostsRepositoryTest {
 
     @After  // 1
     public void cleanup() {
-        postsRepository.deleteAll();
+
+//        postsRepository.deleteAll();
     }
 
     @Test

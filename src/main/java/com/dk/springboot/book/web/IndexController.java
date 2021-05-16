@@ -2,7 +2,7 @@ package com.dk.springboot.book.web;
 
 
 import com.dk.springboot.book.service.posts.PostsService;
-import com.dk.springboot.book.web.dto.PostsResponseDto;
+import com.dk.springboot.book.web.dto.posts.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +20,17 @@ public class IndexController {
     public String index(Model model) {  // 1
         model.addAttribute("posts", postsService.findAllDesc());
         return "index";
+    }
+
+    @GetMapping("/pos")
+    public String posIndex() {
+        return "pos_index";
+    }
+
+    @GetMapping("/pos/register")
+    public String posRegister() {
+        return "items-save";
+    }
 
 //    @GetMapping("/")
 //    public String index() {
@@ -38,7 +49,7 @@ public class IndexController {
          * View-Resolver 가 처리
          */
 
-    }
+//    }
 
 
     @GetMapping("/posts/save")
